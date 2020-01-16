@@ -11,12 +11,12 @@ const (
 )
 
 // NewMailClient function for Factory Pattern
-func NewMailClient(mailClientType int, url, portNumber, username, password, keyService string) IMailClient {
+func NewMailClient(mailClientType int, config *MailConfig) IMailClient {
 	switch mailClientType {
 	case GOMAIL:
-		return NewGoEmailClient(url, portNumber, username, password)
+		return NewGoEmailClient(config.URL, config.Port, config.Username, config.Password)
 	case SENDGRID:
-		return NewSendGridClient(keyService)
+		return NewSendGridClient(config.SecretKey)
 	}
 
 	return nil

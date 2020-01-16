@@ -25,8 +25,8 @@ func NewSendGridClient(keyService string) IMailClient {
 
 // Send function sent mail based on argument provide
 func (s *SendGridClient) Send(from, recipient, subject, msg string) error {
-	From := mail.NewEmail("Backend-golang Admin", from)
-	To := mail.NewEmail("Backend-golang User", recipient)
+	From := mail.NewEmail("Go-Common-Package", from)
+	To := mail.NewEmail("Reviewer", recipient)
 	plainTextContent := msg
 	htmlContent := "<strong>" + msg + "</strong>"
 	message := mail.NewSingleEmail(From, subject, To, plainTextContent, htmlContent)

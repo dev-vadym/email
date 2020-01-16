@@ -8,8 +8,8 @@ import (
 	"gopkg.in/gomail.v2"
 )
 
-// EmailClient manage all email action
-type EmailClient struct {
+// GoMailClient manage all email action
+type GoMailClient struct {
 	dialer     *gomail.Dialer
 	session    gomail.SendCloser
 	url        string
@@ -20,7 +20,7 @@ type EmailClient struct {
 
 // NewGoEmailClient function return gomain client based on singleton pattern
 func NewGoEmailClient(url, portNumber, username, password string) IMailClient {
-	currentSession := &EmailClient{nil, nil, "", "", "", ""}
+	currentSession := &GoMailClient{nil, nil, "", "", "", ""}
 
 	dialer, err := getDialer(url, portNumber, username, password)
 	if err != nil {
@@ -46,7 +46,7 @@ func NewGoEmailClient(url, portNumber, username, password string) IMailClient {
 }
 
 // Send private function sent mail based on argument provide
-func (e *EmailClient) Send(from, to, subject, message string) (err error) {
+func (e *GoMailClient) Send(from, to, subject, message string) (err error) {
 	msg := gomail.NewMessage()
 
 	msg.SetHeader("From", from)
