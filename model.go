@@ -1,6 +1,6 @@
 package email
 
-// MailConfig contain all configs for main services
+// MailConfig contain all configs for service
 type MailConfig struct {
 	URL       string `json:"url,omitempty"`
 	Port      string `json:"port,omitempty"`

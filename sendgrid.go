@@ -7,12 +7,12 @@ import (
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
 )
 
-// SendGridClient manage all email action
+// SendGridClient manage all SendGrid action
 type SendGridClient struct {
 	client *sendgrid.Client
 }
 
-// NewSendGridClient function return sendgrid client based on singleton pattern
+// NewSendGridClient function return SendGrid client based on singleton pattern
 func NewSendGridClient(keyService string) IMailClient {
 	currentSession := &SendGridClient{nil}
 
