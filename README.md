@@ -11,7 +11,7 @@ mailClient := email.NewMailClient(email.SENDGRID, &email.MailConfig{
     SecretKey: "",
 }),
 
-if err := mailClient.Send("", "", "", ""); err != nil {
+if err := mailClient.Send("fromEmail", "recipientEmail", "subject", "message"); err != nil {
     log.Printf("Can not send: %s", err.Error())
 }
 ````
