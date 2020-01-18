@@ -1,4 +1,4 @@
-module email
+module github.com/golang-common-packages/email
 
 go 1.13
 
