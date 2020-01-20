@@ -19,7 +19,7 @@ type GoMailClient struct {
 }
 
 // NewGoEmailClient function return GoMail client based on singleton pattern
-func NewGoEmailClient(url, portNumber, username, password string) IMailClient {
+func NewGoEmailClient(url, portNumber, username, password string) *GoMailClient {
 	currentSession := &GoMailClient{nil, nil, "", "", "", ""}
 
 	dialer, err := getDialer(url, portNumber, username, password)

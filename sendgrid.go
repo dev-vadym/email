@@ -13,7 +13,7 @@ type SendGridClient struct {
 }
 
 // NewSendGridClient function return SendGrid client based on singleton pattern
-func NewSendGridClient(keyService string) IMailClient {
+func NewSendGridClient(keyService string) *SendGridClient {
 	currentSession := &SendGridClient{nil}
 
 	client := sendgrid.NewSendClient(keyService)
